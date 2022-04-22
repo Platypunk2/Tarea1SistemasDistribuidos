@@ -1,0 +1,41 @@
+version: '3.7'
+
+services:
+  client:
+    build: ./Client
+    depends_on:
+      - postgres
+      - server
+    ports:
+      - "8080:8080"
+      
+  server:
+    build: ./Server
+    depends_on:
+      - postgres
+
+  gr_rpc:
+      build: ./GRPC
+      restart: always
+      ports:
+      - "8050:8050"
+      depends_on:
+        - server
+        - client
+
+  postgres:
+    image: docker.io/bitnami/postgresql:11
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRESQL_USERNAME=postgres
+      - POSTGRESQL_DATABASE=tiendita
+      - ALLOW_EMPTY_PASSWORD=yes
+      - POSTGRESQL_PASSWORD=marihuana
+
+  redis_sv:
+    image: docker.io/bitnami/redis:latest
+    volumes:
+    - ./redis.conf:/usr/local/etc/redis/redis.conf
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
