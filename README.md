@@ -45,13 +45,20 @@ Para empezar, el redis se configuro en el archivo "redis.conf" aplicando los sig
 * maxmemory 2mb
 * maxmemory-policy allkeys-lru
 
-Estos implican que el máximo de memoria que tendrá el cache es de 2Mb y que la política de remoción será el Menos Usada Recientemente (Least Recently Used, LRU). Para explicar que es el LRU, se ocupará la siguiente tabla para compararlo con el Más Usada Recientemente (Most Recently Used, MRU).
-<br />
-<div align="center">
+Estos implican que el máximo de memoria que tendrá el cache es de 2Mb y que la política de remoción será el Menos Usada Recientemente (Least Recently Used, LRU). Para explicar que es el LRU, se ocupará el Menos Utilizado con Frecuencia (Least Frequently Used, LFU) para compararlos.
 
-| LRU | MRU |
+* LRU : En LRU se eliminan los datos basados en los registros de acceso históricos de los datos.
+* LFU : En el caso de LFU, Este elimina datos en funcion de la fercuencia histórica de acceso
+  
+La diferencia radica en que en el caso de LRU se ve segun el acceso mas reciente, mientras que LFU busca si se ha accedido a los datos muchas veces en el pasado. Pensando en estas diferencias se logra la siguiente tabla:
+ 
+<br />
+<div align="center"> 
+
+| LRU | LFU |
 | ------------------------------------------------- | ------------------------------------------------- |
-| En LRU los elementos que salen del cache son los que menos se repiten en el cache recientemente | En el caso de MRU, los elementos que salen del cache son los que más ocupados recientemente  |
+| Elimina el dato el cual no haya sido pedido mas recientemente. | Elimina el dato que menos se ha pedido desde que esta en el cache. |
+| Si un dato fue pedido muchas veces en el pasado, no implica que este puede ser eliminado si es que no se sigue usando | Si un dato fue pedido muchas veces en el pasado, es muy posible que este siga en el cache por mucho mas tiempo hasta que mas datos superan la frecuencia de este.
 
 </div>
 
