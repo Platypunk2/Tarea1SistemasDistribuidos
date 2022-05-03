@@ -12,7 +12,7 @@ RUN npm install
 # If you are building your code for production
 # RUN npm ci --only=production
 RUN npm install request@2.81.0
-RUN npm install redis
+RUN npm install redis@4.0.4
 RUN npm install axios
 
 # Bundle app source
