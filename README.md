@@ -50,10 +50,22 @@ Estos implican que el máximo de memoria que tendrá el cache es de 2Mb y que la
 <div align="center">
 
 | LRU | MRU |
-| ------------- | ------------- |
-| Contenido de la celda  | Contenido de la celda  |
+| ------------------------------------------------- | ------------------------------------------------- |
+| En LRU los elementos que salen del cache son los que menos se repiten en el cache recientemente | En el caso de MRU, los elementos que salen del cache son los que más ocupados recientemente  |
 
- 
 </div>
 
+### :key: Query
 
+La query fue aplicada directa en el navegador el localhost:8080. La query sirve para buscar, dado un string, algún elemento del inventario.
+```curl
+http://localhost:8080/inventory/search?q=Mens
+```
+Los elementos de esta query son:
+* METODO: GET
+* KEY: q
+* VALUE: \<palabra a buscar\>
+
+Al aplicar esta query se obtiene el siguiente resultado
+
+![imagen_2022-05-02_220837110](https://user-images.githubusercontent.com/90724923/166394947-ae22fb1e-34aa-41e3-88ae-5136b32acb14.png)
