@@ -77,3 +77,12 @@ Los elementos de esta query son:
 Al aplicar esta query se obtiene el siguiente resultado
 
 ![imagen_2022-05-02_220837110](https://user-images.githubusercontent.com/90724923/166394947-ae22fb1e-34aa-41e3-88ae-5136b32acb14.png)
+
+En consola, por parte del servidor, tambien se puede ver el data obtenido.
+![imagen_2022-05-03_034042445](https://user-images.githubusercontent.com/90724923/166418983-f68ccfcc-2dba-415b-a6c0-121cdf46cdd7.png)
+
+Para salir del ambiente creado simplemente en consola aprete el comando:
+```curl
+Crtl + c
+```
+
