@@ -50,15 +50,16 @@ Estos implican que el máximo de memoria que tendrá el cache es de 2Mb y que la
 * LRU : En LRU se eliminan los datos basados en los registros de acceso históricos de los datos.
 * LFU : En el caso de LFU, Este elimina datos en funcion de la fercuencia histórica de acceso
   
-La diferencia radica en que en el caso de LRU se ve segun el acceso mas reciente, mientras que LFU busca si se ha accedido a los datos muchas veces en el pasado. Pensando en estas diferencias se logra la siguiente tabla:
+La diferencia radica en que, en el caso de LRU se ve segun el acceso mas reciente; mientras que LFU busca si se ha accedido a los datos muchas veces en el pasado. Pensando en estas diferencias se logra la siguiente tabla:
  
 <br />
 <div align="center"> 
 
 | LRU | LFU |
 | ------------------------------------------------- | ------------------------------------------------- |
-| Elimina el dato el cual no haya sido pedido mas recientemente. | Elimina el dato que menos se ha pedido desde que esta en el cache. |
-| Si un dato fue pedido muchas veces en el pasado, no implica que este puede ser eliminado si es que no se sigue usando | Si un dato fue pedido muchas veces en el pasado, es muy posible que este siga en el cache por mucho mas tiempo hasta que mas datos superan la frecuencia de este.
+| Elimina el dato el cual no haya sido pedido más recientemente. | Elimina el dato que menos se ha pedido desde que está en el cache. |
+| Si un dato fue pedido muchas veces en el pasado, no implica que este se pueda mantener en el cache. | Si un dato fue pedido muchas veces en el pasado, es muy posible que este siga en el cache por mucho más tiempo, hasta que más datos superan la frecuencia de este. |
+| Un dato pedido recientemente suele durar más en el cache a menos que se pidan muchos datos distintos. | Un dato reciente no necesariamente va a durar tanto como un dato pasado debido a la frecuencia de este último. |
 
 </div>
 
