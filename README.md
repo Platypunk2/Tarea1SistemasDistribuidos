@@ -36,7 +36,7 @@ Después de haber descargado los archivos del git (usar técnica que más le aco
 ```curl
 docker-compose up
 ```
-Aplicando este comando se habrá creado los contenedores correspondientes y la aplicación estará funcional en el puerto 8080.
+Aplicando este comando se habrá creado los contenedores correspondientes y la aplicación estará funcional en el localhost puerto 8080.
 
 ## 🤝 Uso
 
