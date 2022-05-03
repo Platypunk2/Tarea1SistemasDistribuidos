@@ -21,7 +21,7 @@ En este presente repositorio se almacena la tarea 1 de sistemas distribuidos y s
 * [Postgres](https://www.postgresql.org)
 * [Docker](https://www.docker.com)
 
-## Instalación
+## :shipit: Instalación
 
 En primer lugar, se debe de tener claros los pre-requisitos, estas son:
 
