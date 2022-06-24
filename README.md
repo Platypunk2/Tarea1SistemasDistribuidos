@@ -87,3 +87,4 @@ Para salir del ambiente creado simplemente en consola aprete el comando:
 Crtl + c
 ```
 
+[![Alt text](https://img.youtube.com/vi/L4lsAaQGIb8/0.jpg)](https://www.youtube.com/watch?v=L4lsAaQGIb8)
